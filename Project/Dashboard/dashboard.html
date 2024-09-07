@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #343a40;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .sidebar .logo {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .content .header {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .content .header h2 {
+            margin: 0;
+        }
+        .content .header .profile {
+            display: flex;
+            align-items: center;
+        }
+        .content .header .profile img {
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .card {
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .card .card-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+        }
+        .card .card-body {
+            padding: 15px;
+            background-color: white;
+            color: black;
+        }
+        .card .card-footer {
+            background-color: #f4f6f9;
+            padding: 10px 15px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fa fa-shopping-basket"></i> Admin Panel
+        </div>
+        <a href="#"><i class="fa fa-dashboard"></i> Dashboard</a>
+        <a href="/Dashboard/order.html"><i class="fa fa-shopping-cart"></i> Orders</a>
+        <a href="/Dashboard/add-product.html"><i class="fa fa-tags"></i> Products</a>
+        <a href="/Dashboard/customer.html"><i class="fa fa-users"></i> Customers</a>
+        <a href="/Dashboard/report.html"><i class="fa fa-bar-chart"></i> Reports</a>
+        <a href="#"><i class="fa fa-cogs"></i> Settings</a>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <div class="header">
+            <h2>Dashboard</h2>
+            <div class="profile">
+                <img src="https://via.placeholder.com/40" alt="Profile Image">
+                <div>
+                    <strong>Admin Name</strong>
+                    <p>admin@example.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metrics Section -->
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card text-white bg-primary">
+                    <div class="card-header">Total Sales</div>
+                    <div class="card-body">
+                        <h5 class="card-title">$12,345</h5>
+                        <p class="card-text">This month</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card text-white bg-success">
+                    <div class="card-header">Orders</div>
+                    <div class="card-body">
+                        <h5 class="card-title">123</h5>
+                        <p class="card-text">Pending Orders</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card text-white bg-warning">
+                    <div class="card-header">Customers</div>
+                    <div class="card-body">
+                        <h5 class="card-title">456</h5>
+                        <p class="card-text">New Customers</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card text-white bg-danger">
+                    <div class="card-header">Low Stock</div>
+                    <div class="card-body">
+                        <h5 class="card-title">5</h5>
+                        <p class="card-text">Items to Reorder</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">Sales Overview</div>
+                    <div class="card-body">
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header">Top-Selling Products</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Product 1</li>
+                            <li>Product 2</li>
+                            <li>Product 3</li>
+                            <li>Product 4</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity Section -->
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">Recent Orders</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Status</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#1234</td>
+                                    <td>John Doe</td>
+                                    <td>Pending</td>
+                                    <td>$100</td>
+                                </tr>
+                                <tr>
+                                    <td>#1235</td>
+                                    <td>Jane Smith</td>
+                                    <td>Completed</td>
+                                    <td>$250</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">Notifications</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>New order received</li>
+                            <li>Low stock alert: Product X</li>
+                            <li>System update required</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">Quick Actions</div>
+                    <div class="card-body">
+                        <a class="btn btn-primary" href="/Dashboard/add-product.html">Add New Product</a>
+                        <a class="btn btn-secondary" href="/Dashboard/categories.html">Manage Categories</a>
+                        <a class="btn btn-success" href="/Dashboard/report.html">View Reports</a>
+                        <a class="btn btn-warning" href="/Dashboard/user-management.html">User Management</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('salesChart').getContext('2d');
+        var salesChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [12000, 15000, 10000, 20000, 18000, 22000, 25000],
+                    borderColor: 'rgba(0, 123, 255, 1)',
+                    backgroundColor: 'rgba(0, 123, 255, 0.2)',
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Crud/product.css">
+</head>
+<body>
+    <!-- CRUD Section -->
+    <section class="crud" id="crud">
+        <h1 class="heading">Manage <span>Products</span></h1>
+
+        <!-- Form to Add or Edit Products -->
+        <div class="form-container">
+            <input type="hidden" id="product-id">
+            <input type="text" id="product-name" placeholder="Product Name" required>
+            <input type="text" id="product-price" placeholder="Product Price" required>
+            <input type="text" id="product-image" placeholder="Image URL" required>
+            <button onclick="createOrUpdateProduct()" class="btn">Save Product</button>
+        </div>
+
+        <!-- Display Products -->
+        <div id="product-list" class="box-container">
+            <!-- Products will be appended here dynamically -->
+        </div>
+    </section>
+    <script src="/Crud/product.js"></script>
+</body>
+</html>

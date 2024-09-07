@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Admin Dashboard</h2>
+            <div class="profile">
+                <img src="https://via.placeholder.com/40" alt="Profile Image">
+                <div>
+                    <strong>Admin Name</strong>
+                    <p>admin@example.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-sidebar">
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#settings">Settings</a></li>
+                <li><a href="#users">Users</a></li>
+                <li><a href="#reports">Reports</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="settings-section" id="settings">
+                <h3>Settings</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="site-title">Site Title</label>
+                        <input type="text" id="site-title" value="Admin Dashboard">
+                    </div>
+                    <div class="form-group">
+                        <label for="time-zone">Time Zone</label>
+                        <select id="time-zone">
+                            <option value="UTC">UTC</option>
+                            <option value="EST">EST</option>
+                            <option value="PST">PST</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="currency">Currency</label>
+                        <select id="currency">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email-template">Email Template</label>
+                        <textarea id="email-template">Hello {{name}},</textarea>
+                    </div>
+                    <button class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+
+            <div class="dashboard-section" id="dashboard">
+                <h3>Dashboard</h3>
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Card Title</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Card content</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="users-section" id="users">
+                <h3>Users</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>johndoe@example.com</td>
+                            <td>Admin</td>
+                        </tr>
+                        <tr>
+                            <td>Jane Doe</td>
+                            <td>janedoe@example.com</td>
+                            <td>User</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="reports-section" id="reports">
+                <h3>Reports</h3>
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Report Title</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Report content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

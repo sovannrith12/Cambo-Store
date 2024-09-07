@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Products</title>
+    <style>
+        /* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+#products-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#products-table th, #products-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#products-table th {
+    background-color: #f4f4f4;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#product-form-section {
+    margin-top: 20px;
+}
+
+    </style>
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Dashboard - Products</h1>
+
+        <!-- Add New Product Button -->
+        <button id="add-product-btn" class="btn">Add New Product</button>
+
+        <!-- Products List Table -->
+        <table id="products-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="products-tbody">
+                <!-- Products will be dynamically inserted here -->
+            </tbody>
+        </table>
+
+        <!-- Add/Edit Product Form -->
+        <div id="product-form-section" style="display: none;">
+            <h2 id="form-title">Add Product</h2>
+            <form id="product-form">
+                <input type="hidden" id="product-id">
+
+                <div class="form-group">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" id="product-name" placeholder="Enter product name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-description">Description</label>
+                    <textarea id="product-description" rows="4" placeholder="Enter product description" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-price">Price ($)</label>
+                    <input type="number" id="product-price" placeholder="Enter price" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-image">Product Image URL</label>
+                    <input type="url" id="product-image" placeholder="Enter image URL" required>
+                </div>
+
+                <button type="submit" class="btn" id="submit-btn">Save Product</button>
+                <button type="button" class="btn" id="cancel-btn">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scriptAdd.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            position: fixed;
+            height: 100%;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            display: block;
+            color: #ecf0f1;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .sidebar a:hover {
+            background-color: #34495e;
+        }
+        .sidebar .logo {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .topbar {
+            width: calc(100% - 250px);
+            background-color: #ecf0f1;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            left: 250px;
+            top: 0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .main-content {
+            margin-left: 250px;
+            margin-top: 70px;
+            padding: 20px;
+        }
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .card h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">Admin Dashboard</div>
+        <a href="#dashboard"><i class="fa fa-dashboard"></i> Dashboard</a>
+        <a href="#products"><i class="fa fa-product-hunt"></i> Products</a>
+        <a href="#categories"><i class="fa fa-list-alt"></i> Categories</a>
+        <a href="#orders"><i class="fa fa-shopping-cart"></i> Orders</a>
+        <a href="#customers"><i class="fa fa-users"></i> Customers</a>
+        <a href="#settings"><i class="fa fa-cogs"></i> Settings</a>
+        <a href="#logout"><i class="fa fa-sign-out"></i> Logout</a>
+    </div>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <div>Welcome, Admin</div>
+        <div>
+            <a href="#"><i class="fa fa-bell"></i></a>
+            <a href="#"><i class="fa fa-user"></i></a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="card">
+            <h2>Dashboard</h2>
+            <p>Overview of the store's performance.</p>
+        </div>
+        <div class="card">
+            <h2>Manage Products</h2>
+            <p>Add, edit, or delete products.</p>
+        </div>
+        <div class="card">
+            <h2>Manage Categories</h2>
+            <p>Organize products into categories.</p>
+        </div>
+    </div>
+
+</body>
+</html>
